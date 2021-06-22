@@ -1,0 +1,208 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A Simple Test API",
+    "title": "ConveosBackendApi",
+    "version": "v1"
+  },
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/",
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Hello World",
+        "responses": {
+          "200": {
+            "description": "Success response"
+          }
+        }
+      }
+    },
+    "/User": {
+      "get": {
+        "summary": "Get Specific User",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ID",
+            "type": "string",
+            "description": "The ID of the user",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FirstName": {
+                  "type": "string",
+                  "example": "Jack"
+                },
+                "LastName": {
+                  "type": "string",
+                  "example": "Jones"
+                },
+                "Age": {
+                  "type": "string",
+                  "example": 21
+                },
+                "ID": {
+                  "type": "string",
+                  "example": 10
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a New User",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "details",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FirstName": {
+                  "type": "string",
+                  "example": "Jack"
+                },
+                "LastName": {
+                  "type": "string",
+                  "example": "Jones"
+                },
+                "Age": {
+                  "type": "string",
+                  "example": 21
+                },
+                "ID": {
+                  "type": "string",
+                  "example": 10
+                }
+              }
+            },
+            "description": "User details",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FirstName": {
+                  "type": "string",
+                  "example": "Jack"
+                },
+                "LastName": {
+                  "type": "string",
+                  "example": "Jones"
+                },
+                "Age": {
+                  "type": "string",
+                  "example": 21
+                },
+                "ID": {
+                  "type": "string",
+                  "example": 10
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit an existing user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ID",
+            "type": "string",
+            "description": "The ID of the user",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "details",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FirstName": {
+                  "type": "string",
+                  "example": "Jack"
+                },
+                "LastName": {
+                  "type": "string",
+                  "example": "Jones"
+                },
+                "Age": {
+                  "type": "string",
+                  "example": 21
+                },
+                "ID": {
+                  "type": "string",
+                  "example": 10
+                }
+              }
+            },
+            "description": "User details",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FirstName": {
+                  "type": "string",
+                  "example": "Jack"
+                },
+                "LastName": {
+                  "type": "string",
+                  "example": "Jones"
+                },
+                "Age": {
+                  "type": "string",
+                  "example": 21
+                },
+                "ID": {
+                  "type": "string",
+                  "example": 10
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a Specific User",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ID",
+            "type": "string",
+            "description": "The ID of the user",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "type": "string",
+              "example": "User successfully deleted"
+            }
+          }
+        }
+      }
+    }
+  }
+}
